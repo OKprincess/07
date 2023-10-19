@@ -1,23 +1,21 @@
 //
 //  main.c
-//  07_P1
+//  07_P2
 //
 //  Created by ok sojoung on 2023/10/19.
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(void)
 {
-    int flag = 1;
-    int y;              // y를 전체함수에서 정의하면 ㄱㅊ
-    while(flag != 0)
+    int i;
+    int temp = 1;           // 아니면 for문 내부에 static int temp=1; 로 하면 생존기간이 늘어남.
+                            // static은 초기화의 영역이기 때문에 for루프를 다시 돌 때 temp=1이 실행되지X
+    for (i=0; i<5; i++)
     {
-        //int y;          // y의 범위는 while 블록
-        y = 3;
-        flag = 0;
+        printf("temp = %d\n", temp);
+        temp++;
     }
-    y = 4;
     return 0;
 }
