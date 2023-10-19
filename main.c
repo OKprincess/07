@@ -1,27 +1,28 @@
 //
 //  main.c
-//  07_P4
+//  07_P5
 //
 //  Created by ok sojoung on 2023/10/19.
 //
 
 #include <stdio.h>
 
-void f(void);
+void sub(void);
 
-int i;
 int main(void)
 {
-    for(i=0; i<5; i++)
-    {
-        f();
-    }
+    int i;
+    for(i=0; i<3; i++)
+        sub();
     return 0;
 }
 
-void f(void)
+void sub(void)
 {
-    int i;              // 따로 i넣으면 ㄱㅊ
-    for(i=0; i<10; i++)
-        printf("#");
+    int         auto_count  = 0;
+    static int  static_count = 0;
+    auto_count++;
+    static_count++;
+    printf("auto_count=%d\n", auto_count);
+    printf("static_count=%d\n", static_count);
 }
