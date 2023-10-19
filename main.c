@@ -1,21 +1,27 @@
 //
 //  main.c
-//  07_P2
+//  07_P3
 //
 //  Created by ok sojoung on 2023/10/19.
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+
+int inc(int counter);
 
 int main(void)
 {
     int i;
-    int temp = 1;           // 아니면 for문 내부에 static int temp=1; 로 하면 생존기간이 늘어남.
-                            // static은 초기화의 영역이기 때문에 for루프를 다시 돌 때 temp=1이 실행되지X
-    for (i=0; i<5; i++)
-    {
-        printf("temp = %d\n", temp);
-        temp++;
-    }
+    i = 10;
+    printf("함수 호출 전 = i=%d\n", i);
+    i = inc(i);     // inc(i)만 하면 둘다 10이 나오는데 함수가 그냥 소멸돼서.
+    printf("함수 호출 후 = i=%d\n", i);
     return 0;
+}
+
+int inc(int counter)
+{
+    counter++;
+    return counter;
 }
