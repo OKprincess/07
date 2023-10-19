@@ -1,6 +1,6 @@
 //
 //  sub.c
-//  07_P6(1)
+//  07_P6(2)
 //
 //  Created by ok sojoung on 2023/10/19.
 //
