@@ -1,27 +1,27 @@
 //
 //  main.c
-//  07_P3
+//  07_P4
 //
 //  Created by ok sojoung on 2023/10/19.
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int inc(int counter);
+void f(void);
 
+int i;
 int main(void)
 {
-    int i;
-    i = 10;
-    printf("함수 호출 전 = i=%d\n", i);
-    i = inc(i);     // inc(i)만 하면 둘다 10이 나오는데 함수가 그냥 소멸돼서.
-    printf("함수 호출 후 = i=%d\n", i);
+    for(i=0; i<5; i++)
+    {
+        f();
+    }
     return 0;
 }
 
-int inc(int counter)
+void f(void)
 {
-    counter++;
-    return counter;
+    int i;              // 따로 i넣으면 ㄱㅊ
+    for(i=0; i<10; i++)
+        printf("#");
 }
